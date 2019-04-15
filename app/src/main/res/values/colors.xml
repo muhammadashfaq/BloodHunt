@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#d70f12</color>
+    <color name="colorPrimaryDark">#b53f41</color>
+    <color name="colorAccent">#ff4446</color>
+    <color name="backcolor">#fdfdfd</color>
+    <color name="postBackColor">#d1d1d1</color>
+    <color name="silver">#dadada</color>
+    <color name="white">#fff</color>
+    <color name="comment_bg_color">#cfcfcf</color>
+    <color name="black">#000000</color>
+    <color name="my_spinner_text_color">#fff</color>
+    <color name="snackRed">#F44336</color>
+    <color name="snackGreen">#3D773D</color>
+</resources>

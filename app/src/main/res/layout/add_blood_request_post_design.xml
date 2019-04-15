@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.v4.widget.NestedScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/postBackColor"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/colorPrimary"
+                    android:orientation="horizontal">
+
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:id="@+id/img_vu_user_newTextPost"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/mily"
+                        app:civ_border_width="0dp"
+                        app:civ_shadow="true"
+                        app:civ_shadow_color="@color/white"
+                        app:civ_shadow_radius="0" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/txt_vu_userName_newTextPost"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="User Name"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txt_vu_userPostTime_newTextPost"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="26 hours ago"
+                            android:textColor="@color/white"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edt_txt_user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:ems="10"
+                    android:gravity="top"
+                    android:hint="@string/your_name"
+                    android:inputType="textMultiLine"
+
+                    android:maxLength="180"
+                    android:padding="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/silver" />
+
+                <EditText
+                    android:id="@+id/edt_txt_user_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:ems="10"
+                    android:gravity="top"
+                    android:hint="@string/your_contact"
+                    android:inputType="phone"
+                    android:maxLength="180"
+                    android:padding="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/silver" />
+
+
+                <EditText
+                    android:id="@+id/edt_txt_user_hospital"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:ems="10"
+                    android:gravity="top"
+                    android:hint="@string/where_to_donate"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+
+                    android:maxLength="180"
+                    android:padding="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/silver" />
+
+                <EditText
+                    android:id="@+id/edt_txt_user_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:ems="10"
+                    android:gravity="top"
+                    android:hint="@string/address"
+                    android:inputType="textMultiLine"
+
+                    android:maxLength="180"
+                    android:padding="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/silver" />
+
+                <EditText
+                    android:id="@+id/edt_txt_user_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:ems="10"
+                    android:gravity="top"
+                    android:hint="@string/city"
+                    android:inputType="textMultiLine"
+
+                    android:maxLength="180"
+                    android:padding="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/silver" />
+
+                <EditText
+                    android:id="@+id/edt_txt_user_relation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:ems="10"
+                    android:gravity="top"
+                    android:hint="@string/patient_s_relation"
+                    android:inputType="textMultiLine"
+
+                    android:maxLength="180"
+                    android:padding="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/silver" />
+
+                <EditText
+                    android:id="@+id/edt_txt_user_disease"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:ems="10"
+                    android:gravity="top"
+                    android:hint="@string/patient_disease"
+                    android:inputType="textMultiLine"
+
+                    android:maxLength="180"
+                    android:padding="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/silver" />
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white">
+
+                    <Spinner
+                        android:id="@+id/spnrBloodGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/Blood_Group"
+                        android:padding="10dp" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/silver" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    android:padding="5dp"
+                    android:visibility="visible">
+
+                    <Button
+                        android:id="@+id/btnDiscardTextPost"
+                        android:layout_width="70dp"
+                        android:layout_height="40dp"
+                        android:background="@null"
+                        android:text="Cancel"
+                        android:textColor="@color/black" />
+
+                    <Button
+                        android:id="@+id/btnCreateTextPost"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_selector_dialogues"
+                        android:padding="10dp"
+                        android:text="Post"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+
+        <ProgressBar
+            android:id="@+id/mProgbarr_loading"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:background="@color/silver"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+</android.support.v4.widget.NestedScrollView>
+
+
+
+

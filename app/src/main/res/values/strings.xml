@@ -1,0 +1,104 @@
+<resources>
+    <string name="app_name">SaveLet</string>
+    <string name="title_activity_login">Sign in</string>
+    <string-array name="gender">
+        <item>Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string-array name="Blood_Group">
+        <item>Blood</item>
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>O+</item>
+        <item>O-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+    </string-array>
+
+
+    <string name="facebook_app_id">772791453076602</string>
+    <string name="fb_login_protocol_scheme">fb772791453076602</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_main2">Home Page</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">UserName</string>
+    <string name="nav_header_subtitle">UserEmail</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_home_pag">Home Pag</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="action_example">Example action</string>
+    <string name="title_activity_home_page">Home Page</string>
+
+
+    <!--<string name="registerNewUserUrl">register.php</string>-->
+    <!--<string name="LoginUserUrl">login.php</string>-->
+    <string name="registerNewUserUrl">signup.php</string>
+    <string name="AddNewPostUrl">AddNewPostUrlNew.php</string>
+
+    <string name="LoginUserUrl">signin.php</string>
+    <string name="LoginUserUrlSocail">signinSocail.php</string>
+    <string name="ForgetPasswordLink">resetPasswordNew.php</string>
+    <string name="ChangePasswordLink">ChangePassword</string>
+    <string name="getAllHomePosts">getAllHomePostsNew.php</string>
+    <string name="getAllUsers">getAllUsersNew.php</string>
+    <string name="getUserProfileDetails">getUserProfileDetailsNew.php</string>
+    <string name="getAllTimeLinePosts">getAllTimeLinePostsNew.php</string>
+    <string name="postUserComment">InsertCommentNew.php</string>
+    <string name="getAllComments">getAllPostCommentsNew.php</string>
+    <string name="UpdateUserProfile">UpdateUserProfileNew.php</string>
+    <string name="ProfileImagePath">images/</string>
+    <string name="PostImagePath">postsImages/</string>
+    <string name="AddNewProfilePicUrl">uploadProfilePicNew.php</string>
+    <string name="your_name">Your Name</string>
+    <string name="address">Address</string>
+    <string name="city">City</string>
+    <string name="patient_s_relation">Patient\'s relation?</string>
+    <string name="patient_disease">Patient Disease</string>
+    <string name="where_to_donate">Where to donate</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="your_contact">Your Contact</string>
+    <string name="google_map_key">AIzaSyCfWU8n-iWvIuwM5rhyodMPD3RhFdcCdm0</string>
+    <string name="action_logout">logout</string>
+
+
+    <!--<string name="AddNewImagePostUrl">http://infosys.pk/community/Post/insertImagePost</string>-->
+    <!--<string name="AddNewProfilePicUrl">http://infosys.pk/community/User/uploadPic</string>-->
+    <!--<string name="AddNewLikesCount">http://infosys.pk/community/Comments/addLike</string>-->
+    <!--<string name="AddNewDisLikesCount">http://infosys.pk/community/Comments/addLike</string>-->
+    <!--<string name="DeleteTheUserPost">http://infosys.pk/community/Post/delete</string>-->
+    <!--<string name="UpdateTheUserPost">http://infosys.pk/community/scripts/UpdateTheUserPost.php</string>-->
+    <!--<string name="LoginUserUrl">http://192.168.0.118:8080/cbsComm/scripts/login.php</string>-->
+
+    <!--<string name="getPaginatedHomePosts">http://infosys.pk/community/Post/getPaginatedHomePosts</string>-->
+    <!--<string name="getPaginatedTimeLinePosts">http://infosys.pk/community/Post/getPaginatedTimelinePosts</string>-->
+    <!--<string name="getPaginatedAdminPosts">http://infosys.pk/community/Post/getPaginatedAdminPosts</string>-->
+    <!--<string name="getAllPosts">http://infosys.pk/community/Post/getAllPosts</string>-->
+
+    <!--<string name="getLikes">http://infosys.pk/community/Comments/getLikes</string>-->
+    <!--<string name="UpdateUserName">http://infosys.pk/community/User/updateName</string>-->
+
+    <!--<string name="userProfilePicUrl">http://infosys.pk/community/scripts/getUserProfilePic.php</string>-->
+
+</resources>

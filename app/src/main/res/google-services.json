@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "101289027885",
+    "firebase_url": "https://savelet-c7fe1.firebaseio.com",
+    "project_id": "savelet-c7fe1",
+    "storage_bucket": "savelet-c7fe1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101289027885:android:7440fbec527b30bf",
+        "android_client_info": {
+          "package_name": "bloodcafe.savelet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "101289027885-ifpr45qbtk1au34en31iauh6tpastdt8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwxOHHPzuPxSzOR-wdPOKnZ1BDyfkDPGU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
