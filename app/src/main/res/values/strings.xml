@@ -74,13 +74,15 @@
     <string name="city">City</string>
     <string name="patient_s_relation">Patient\'s relation?</string>
     <string name="patient_disease">Patient Disease</string>
-    <string name="where_to_donate">Where to donate</string>
+    <string name="where_to_donate">Where to donate(Hospital Name)</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="your_contact">Your Contact</string>
     <string name="google_map_key">AIzaSyCfWU8n-iWvIuwM5rhyodMPD3RhFdcCdm0</string>
-    <string name="action_logout">logout</string>
+    <string name="action_logout">Refresh</string>
+
+
 
 
     <!--<string name="AddNewImagePostUrl">http://infosys.pk/community/Post/insertImagePost</string>-->

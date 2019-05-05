@@ -198,21 +198,24 @@ private ProgressDialog mProgressDialogue;
     @Override
     public void onUserNameClick(int p) {
         Intent i = new Intent(getActivity(), TrackerActivity.class);
-       UserPost mUser =  mUserPostsArrayList.get(p);
-        String userData[] = {
-                mUser.getUName(),
-                mUser.getUserContact(),
-                mUser.getUserProfilePic(),
-                mUser.getUserId(),
-                mUser.getUserPostTime(),
-                mUser.getUserBloodRequestType(),
-                mUser.getUserlats(),
-                mUser.getUserlong(),
-                mUser.getUserAddress(),
-                mUser.getUserContact()
-        };
-        i.putExtra("userData",userData);
-        startActivity(i);
+        if(mUserPostsArrayList != null ){
+            UserPost mUser =  mUserPostsArrayList.get(p);
+            String userData[] = {
+                    mUser.getUName(),
+                    mUser.getUserContact(),
+                    mUser.getUserProfilePic(),
+                    mUser.getUserId(),
+                    mUser.getUserPostTime(),
+                    mUser.getUserBloodRequestType(),
+                    mUser.getUserlats(),
+                    mUser.getUserlong(),
+                    mUser.getUserAddress(),
+                    mUser.getUserContact()
+            };
+            i.putExtra("userData",userData);
+            startActivity(i);
+        }
+
     }
 
 

@@ -328,30 +328,31 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
 //        }
         if (id == R.id.action_logout) {
 
+        getUserProfileDetails();
 
-            String respose = SessionManager.getStoreVarSocialLogin();
-            if(respose.equalsIgnoreCase("facebook")){
-                if(FirebaseAuth.getInstance().getCurrentUser()!=null){
-                    FirebaseAuth.getInstance().signOut();
-                    LoginManager.getInstance().logOut();
-                    mSessionManager.setStoreVarSocialLogin("");
-                    startActivity(new Intent(this, LoginActivity.class));
-                }
-
-
-            }
-
-            if(respose.equalsIgnoreCase("google")){
-                if(FirebaseAuth.getInstance().getCurrentUser()!=null){
-                    FirebaseAuth.getInstance().signOut();
-                    mSessionManager.setStoreVarSocialLogin("");
-                    startActivity(new Intent(this, LoginActivity.class));
-                }
-            }
-
-            mSessionManager.setLogin(false, "", "", "", "");
-            startActivity(new Intent(this, LoginActivity.class));
-            finish();
+//            String respose = SessionManager.getStoreVarSocialLogin();
+//            if(respose.equalsIgnoreCase("facebook")){
+//                if(FirebaseAuth.getInstance().getCurrentUser()!=null){
+//                    FirebaseAuth.getInstance().signOut();
+//                    LoginManager.getInstance().logOut();
+//                    mSessionManager.setStoreVarSocialLogin("");
+//                    startActivity(new Intent(this, LoginActivity.class));
+//                }
+//
+//
+//            }
+//
+//            if(respose.equalsIgnoreCase("google")){
+//                if(FirebaseAuth.getInstance().getCurrentUser()!=null){
+//                    FirebaseAuth.getInstance().signOut();
+//                    mSessionManager.setStoreVarSocialLogin("");
+//                    startActivity(new Intent(this, LoginActivity.class));
+//                }
+//            }
+//
+//            mSessionManager.setLogin(false, "", "", "", "");
+//            startActivity(new Intent(this, LoginActivity.class));
+//            finish();
             return true;
         }
 
@@ -421,7 +422,6 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
 
     public void getUserProfileDetails() {
         String url = mBaseURl + getApplicationContext().getResources().getString(R.string.getUserProfileDetails);
-
         String response = SessionManager.getStoreVarSocialLogin();
       //  Toast.makeText(this, response, Toast.LENGTH_SHORT).show();
         if(response.equalsIgnoreCase("google")){

@@ -3,13 +3,18 @@ package bloodcafe.savelet;
 import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
@@ -54,6 +59,9 @@ public class TrackerActivity extends AppCompatActivity implements OnMapReadyCall
     SessionManager mSessionManager;
     List<String> spinner_list;
     String map_type;
+    boolean PERMISSION_STATUS = false;
+    private int SMS_PERMISSION = 100;
+    private int CALL_PERMISSION = 200;
     Spinner spinner;
     String userData[];
     ProgressDialog mProgressDialogue;
@@ -126,8 +134,19 @@ public class TrackerActivity extends AppCompatActivity implements OnMapReadyCall
             @Override
             public void onClick(View v) {
                 // The number on which you want to send SMS
-                SmsManager sm = SmsManager.getDefault();
-                sm.sendTextMessage(userData[9], null, "hie I saw you needed "+userData[5] +" blood! I am " +mSessionManager.getKeyuserName()+" Please get in touch I am Glad to Help", null, null);
+                if (ActivityCompat.checkSelfPermission(TrackerActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    takeSMSPermission();
+                    return;
+                } else {
+
+                }
+
+                if(PERMISSION_STATUS){
+                    SmsManager sm = SmsManager.getDefault();
+                    sm.sendTextMessage(userData[9], null, "Hi I saw you needed "+userData[5] +" blood! I am " +mSessionManager.getKeyuserName()+" Please get in touch, I am very glad to help you", null, null);
+                    Toast.makeText(TrackerActivity.this, "Message Sent", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
@@ -136,13 +155,125 @@ public class TrackerActivity extends AppCompatActivity implements OnMapReadyCall
             public void onClick(View v) {
                 Intent i = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + userData[9]));
                 if (ActivityCompat.checkSelfPermission(TrackerActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(TrackerActivity.this, "please provide permission to call", Toast.LENGTH_SHORT).show();
+                    takeCallPermission();
+                    Toast.makeText(TrackerActivity.this, "Please provide permission to call", Toast.LENGTH_SHORT).show();
                     return;
                 } else {
                     startActivity(i);
                 }
             }
         });
+    }
+
+    private void takeSMSPermission() {
+        int permissionsSMS = ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.SEND_SMS);
+
+        if (permissionsSMS != PackageManager.PERMISSION_GRANTED )
+            setUpSMSPermissions();
+        else {
+            PERMISSION_STATUS = true;
+        }
+
+    }
+
+
+    private void takeCallPermission() {
+        int permissionsAccess = ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CALL_PHONE);
+
+        if (permissionsAccess != PackageManager.PERMISSION_GRANTED)
+            setUpCallPermissions();
+        else {
+            PERMISSION_STATUS = true;
+        }
+
+    }
+    private void setUpSMSPermissions() {
+        // Toast.makeText(getApplicationContext(), "setup permission mn aya", Toast.LENGTH_SHORT).show();
+        ActivityCompat.requestPermissions(TrackerActivity.this,
+                new String[]{Manifest.permission.SEND_SMS},
+                SMS_PERMISSION);
+
+    }
+
+    private void setUpCallPermissions() {
+        // Toast.makeText(getApplicationContext(), "setup permission mn aya", Toast.LENGTH_SHORT).show();
+        ActivityCompat.requestPermissions(TrackerActivity.this,
+                new String[]{Manifest.permission.CALL_PHONE},
+                CALL_PERMISSION);
+
+    }
+
+//    private static void showSnack(String snackText, int snackColor) {
+//        Snackbar snackbar;
+//        snackbar = Snackbar.make(frameLayout, snackText, Snackbar.LENGTH_LONG);
+//        View snackBarView = snackbar.getView();
+//        snackBarView.setBackgroundColor(snackColor);
+//        snackbar.show();
+//    }
+
+    private void messageSMS() {
+        android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(this);
+        builder.setMessage("Please allow Location Permission to post your request");
+        builder.setTitle("Alert");
+        builder.setPositiveButton("Go to Settings", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                if (!PERMISSION_STATUS) {
+                    Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                    Uri uri = Uri.fromParts("package", getPackageName(), null);
+                    intent.setData(uri);
+                    startActivityForResult(intent, SMS_PERMISSION);
+
+                } else {
+                    takeSMSPermission();
+                }
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+                Toast.makeText(TrackerActivity.this, "Allow Permission to proceed", Toast.LENGTH_SHORT).show();
+               // showSnack("Allow Locaiton Permission to Post your request", getResources().getColor(R.color.snackRed));
+
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+    }
+    private void messageCALL() {
+        android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(this);
+        builder.setMessage("Please allow Location Permission to post your request");
+        builder.setTitle("Alert");
+        builder.setPositiveButton("Go to Settings", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                if (!PERMISSION_STATUS) {
+                    Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                    Uri uri = Uri.fromParts("package", getPackageName(), null);
+                    intent.setData(uri);
+                    startActivityForResult(intent, CALL_PERMISSION);
+
+                } else {
+                    takeSMSPermission();
+                }
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+                Toast.makeText(TrackerActivity.this, "Allow Permission to proceed", Toast.LENGTH_SHORT).show();
+                // showSnack("Allow Locaiton Permission to Post your request", getResources().getColor(R.color.snackRed));
+
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
     }
 
     @Override
@@ -163,6 +294,9 @@ public class TrackerActivity extends AppCompatActivity implements OnMapReadyCall
 
 
 
+
+
+
     public static String getAddressFromLatLng(Context context, LatLng latLng) {
         Geocoder geocoder;
         List<Address> addresses;
@@ -176,6 +310,36 @@ public class TrackerActivity extends AppCompatActivity implements OnMapReadyCall
         }
     }
 
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if(requestCode == SMS_PERMISSION){
+            if (grantResults.length > 0
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                PERMISSION_STATUS = true;
+
+            } else {
+                PERMISSION_STATUS = false;
+                messageSMS();
+
+            }
+        }
+        if(requestCode == CALL_PERMISSION){
+            if (grantResults.length > 0
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                PERMISSION_STATUS = true;
+
+            } else {
+                PERMISSION_STATUS = false;
+                messageCALL();
+
+            }
+        }
+
+    }
+
     private void setSpinneradapter(List<String> list, Spinner spinner) {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
                 android.R.layout.simple_spinner_item, list);
@@ -187,17 +351,22 @@ public class TrackerActivity extends AppCompatActivity implements OnMapReadyCall
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 String selectMap = parent.getItemAtPosition(position).toString();
-                if(selectMap.equalsIgnoreCase("Normal Map")){
+
+                if(googleMap != null){
+                    if(selectMap.equalsIgnoreCase("Normal Map")){
                         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-                } else if (selectMap.equalsIgnoreCase("Hybrid Map")) {
-                    googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-                }else if(selectMap.equalsIgnoreCase("Satellite Map")){
-                    googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-                }else if(selectMap.equalsIgnoreCase("Terrain Map")){
-                    googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
-                }else{
-                    googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+                    } else if (selectMap.equalsIgnoreCase("Hybrid Map")) {
+                        googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+                    }else if(selectMap.equalsIgnoreCase("Satellite Map")){
+                        googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+                    }else if(selectMap.equalsIgnoreCase("Terrain Map")){
+                        googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+                    }else{
+                        googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+                    }
                 }
+
+
             }
 
             @Override

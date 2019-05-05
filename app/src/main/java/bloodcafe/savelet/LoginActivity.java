@@ -290,7 +290,6 @@ public class LoginActivity extends AppCompatActivity {
     private void sendNewUserToServer() {
         String url = mBaseURl + getApplicationContext().getResources().getString(R.string.registerNewUserUrl);
 
-
         StringRequest mStringRequest = new StringRequest(
                 1,
                 url,
@@ -452,8 +451,6 @@ public class LoginActivity extends AppCompatActivity {
         String pass = etPass.getText().toString().trim();
 
         if (!mail.isEmpty() && !pass.isEmpty() && IsNetworkConnected()) {
-
-
             LogTheUser(mail, pass);
 //            mAuth.signInWithEmailAndPassword(mail,pass)
 //                    .addOnCompleteListener(new OnCompleteListener<AuthResult>()
@@ -580,8 +577,6 @@ public class LoginActivity extends AppCompatActivity {
 
         String url = mBaseURl + getApplicationContext().getResources().getString(R.string.LoginUserUrl);
 
-
-
         progressDialog.setMessage("Plz wait...");
         progressDialog.show();
 
@@ -591,8 +586,12 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
 
-//                        Toast.makeText(LoginActivity.this, response, Toast.LENGTH_LONG).show();
-                        if(!response.equals("no user present")){
+                      Toast.makeText(LoginActivity.this, response, Toast.LENGTH_LONG).show();
+                        if(response.equals("no user present")){
+                            progressDialog.dismiss();
+                            Toast.makeText(LoginActivity.this, "Sorry no user present", Toast.LENGTH_SHORT).show();
+                        }else{
+
                             progressDialog.dismiss();
                             try {
                                 JSONObject mJsonObject = new JSONObject(response);
@@ -617,9 +616,7 @@ public class LoginActivity extends AppCompatActivity {
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
-                        }else{
-                            progressDialog.dismiss();
-                            Toast.makeText(LoginActivity.this, "Error", Toast.LENGTH_SHORT).show();
+
                         }
 
                     }

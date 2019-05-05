@@ -156,8 +156,8 @@ public class BloodRequestActivity extends AppCompatActivity {
                 if(isLocationEnabled(BloodRequestActivity.this)){
                     if (PERMISSION_STATUS) {
                         requestLocationUpdates();
-//                        initTheValues();
-//                        validateTheValuesAndSend();
+                        initTheValues();
+                        validateTheValuesAndSend();
                     } else {
                         showSnack("Location Permission not granted", getResources().getColor(R.color.snackRed));
                     }
