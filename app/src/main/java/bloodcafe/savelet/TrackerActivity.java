@@ -134,18 +134,16 @@ public class TrackerActivity extends AppCompatActivity implements OnMapReadyCall
             @Override
             public void onClick(View v) {
                 // The number on which you want to send SMS
-                if (ActivityCompat.checkSelfPermission(TrackerActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                if (ActivityCompat.checkSelfPermission(TrackerActivity.this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
                     takeSMSPermission();
                     return;
                 } else {
 
                 }
 
-                if(PERMISSION_STATUS){
-                    SmsManager sm = SmsManager.getDefault();
-                    sm.sendTextMessage(userData[9], null, "Hi I saw you needed "+userData[5] +" blood! I am " +mSessionManager.getKeyuserName()+" Please get in touch, I am very glad to help you", null, null);
-                    Toast.makeText(TrackerActivity.this, "Message Sent", Toast.LENGTH_SHORT).show();
-                }
+                SmsManager sm = SmsManager.getDefault();
+                sm.sendTextMessage(userData[9], null, "Hi I saw you needed "+userData[5] +" blood! I am " +mSessionManager.getKeyuserName()+" Please get in touch, I am very glad to help you", null, null);
+                Toast.makeText(TrackerActivity.this, "Message Sent", Toast.LENGTH_SHORT).show();
 
             }
         });
