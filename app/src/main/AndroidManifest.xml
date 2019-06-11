@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="bloodcafe.savelet">
+    package="bloodcafe.bloodhunt">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -23,17 +23,17 @@
         android:largeHeap="true"
         android:hardwareAccelerated="false"
         android:theme="@style/AppTheme">
-        <activity android:name=".BloodRequestActivity"></activity>
-        <activity android:name=".NearbyBloodbanks" />
-        <activity android:name=".NearbyHospitals" />
-        <activity android:name=".TrackerActivity" />
+        <activity android:name="bloodcafe.bloodhunt.BloodRequestActivity"></activity>
+        <activity android:name="bloodcafe.bloodhunt.NearbyBloodbanks" />
+        <activity android:name="bloodcafe.bloodhunt.NearbyHospitals" />
+        <activity android:name="bloodcafe.bloodhunt.TrackerActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_map_key" />
 
         <activity
-            android:name=".LoginActivity"
+            android:name="bloodcafe.bloodhunt.LoginActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
@@ -64,20 +64,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignUp"
+            android:name="bloodcafe.bloodhunt.SignUp"
             android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity android:name=".ForgotPassword" />
+        <activity android:name="bloodcafe.bloodhunt.ForgotPassword" />
         <activity
-            android:name=".HomePage"
+            android:name="bloodcafe.bloodhunt.HomePage"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-        <activity android:name=".UserTrackActivity" />
+        <activity android:name="bloodcafe.bloodhunt.UserTrackActivity" />
         <activity
-            android:name=".AllUsersActivity"
+            android:name="bloodcafe.bloodhunt.AllUsersActivity"
             android:label="Listing All Users" />
         <activity
-            android:name=".SettingsActivity"
+            android:name="bloodcafe.bloodhunt.SettingsActivity"
             android:windowSoftInputMode="stateAlwaysHidden" />
     </application>
 

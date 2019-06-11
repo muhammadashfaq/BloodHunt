@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "bloodcafe.savelet"
+        applicationId "bloodcafe.bloodhunt"
         minSdkVersion 15
         targetSdkVersion 28
 

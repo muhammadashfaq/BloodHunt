@@ -102,5 +102,15 @@
     <!--<string name="UpdateUserName">http://infosys.pk/community/User/updateName</string>-->
 
     <!--<string name="userProfilePicUrl">http://infosys.pk/community/scripts/getUserProfilePic.php</string>-->
-
+    <string name="location_permission_title">Location Permission</string>
+    <string name="location_permission_message">Hi there! We can\'t get Near By Location without location permission, could you please grant it?</string>
+    <string name="website_not_registered_string">Website not Registered</string>
+    <string name="phone_number_not_registered_string">Phone Number not Registered</string>
+    <string name="share_link_string">Share Link</string>
+    <string name="yes">Yes</string>
+    <string name="no">No thanks</string>
+    <string name="turn_on_gps_message">Please Turn on GPS</string>
+    <string name="gps_permission_title">Turn On GPS</string>
+    <string name="gps_permission_message">Hi there! Please turn on GPS to detect current location.</string>
+    <string name="retry">Retry</string>
 </resources>

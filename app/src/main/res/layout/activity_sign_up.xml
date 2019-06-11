@@ -13,7 +13,7 @@
     android:orientation="vertical"
     android:padding="30dp"
     android:background="#ffffff"
-    tools:context="bloodcafe.savelet.SignUp">
+    tools:context="bloodcafe.bloodhunt.SignUp">
 
     <ImageView
         android:layout_width="100dp"
