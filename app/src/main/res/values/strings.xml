@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SaveLet</string>
+    <string name="app_name">Bloodhunt</string>
     <string name="title_activity_login">Sign in</string>
     <string-array name="gender">
         <item>Gender</item>

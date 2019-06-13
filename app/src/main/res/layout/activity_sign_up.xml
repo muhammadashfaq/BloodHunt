@@ -19,7 +19,8 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/logo" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/blood_hunt_logo" />
     <EditText
         android:id="@+id/etname"
         android:layout_width="match_parent"

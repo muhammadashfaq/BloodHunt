@@ -69,15 +69,6 @@ import static bloodcafe.bloodhunt.constants.BaseurlClass.isNetworkAvailable;
 import static bloodcafe.bloodhunt.constants.BaseurlClass.mBaseURl;
 
 public class HomePage extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-//
-//    FirebaseAuth mAuth;
-//    FirebaseAuth.AuthStateListener mAuthStateListener;
-//
-//    protected void onSta rt()
-//    {
-//        super.onStart();
-//        mAuth.addAuthStateListener(mAuthStateListener);
-//    }
 
     boolean  PERMISSION_STATUS = false;
     private int LOCATION_PERMISSION = 100;
@@ -124,22 +115,6 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
             linLayProgressContainer.setVisibility(View.GONE);
             showSnack("Seems no Internet connection.",getResources().getColor(R.color.snackRed));
         }
-
-
-//        mAuth=FirebaseAuth.getInstance();
-//        mAuthStateListener=new FirebaseAuth.AuthStateListener()
-//        {
-//            @Override
-//            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth)
-//            {
-//                if(firebaseAuth.getCurrentUser()==null)
-//                {
-//                    startActivity(new Intent(HomePage.this,LoginActivity.class));
-//                    finish();
-//                }
-//
-//            }
-//        };
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -310,7 +285,6 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         if (id == R.id.action_logout) {
 
         getUserProfileDetails();
-
 //            String respose = SessionManager.getStoreVarSocialLogin();
 //            if(respose.equalsIgnoreCase("facebook")){
 //                if(FirebaseAuth.getInstance().getCurrentUser()!=null){
