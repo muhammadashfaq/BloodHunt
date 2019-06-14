@@ -1,6 +1,7 @@
 package bloodcafe.bloodhunt;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -70,7 +71,7 @@ public class NearbyHospitals extends AppCompatActivity implements OnMapReadyCall
 
     private void getNearbyHospitals(Double lat,Double longi) {
 
-        Object dataTransfer[] = new Object[2];
+        Object[] dataTransfer = new Object[2];
         GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
         String hospital = "hospital";
 
@@ -212,5 +213,12 @@ public class NearbyHospitals extends AppCompatActivity implements OnMapReadyCall
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this,HomePage.class));
     }
 }

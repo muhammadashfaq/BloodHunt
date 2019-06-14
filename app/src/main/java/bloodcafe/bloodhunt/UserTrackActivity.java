@@ -54,7 +54,7 @@ public class UserTrackActivity extends AppCompatActivity implements OnMapReadyCa
     List<String> spinner_list;
     String map_type;
     Spinner spinner;
-    String userData[];
+    String[] userData;
 
     ProgressDialog mProgressDialogue;
     LatLng mRequesterLatLng;

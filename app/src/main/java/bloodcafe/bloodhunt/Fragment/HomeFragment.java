@@ -99,7 +99,7 @@ private ProgressDialog mProgressDialogue;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        swipeLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_container);
+        swipeLayout = view.findViewById(R.id.swipe_container);
         swipeLayout.setOnRefreshListener(this);
         swipeLayout.setColorSchemeColors(android.R.color.holo_green_dark,
                 android.R.color.holo_red_dark,
@@ -198,7 +198,7 @@ private ProgressDialog mProgressDialogue;
         Intent i = new Intent(getActivity(), TrackerActivity.class);
         if(mUserPostsArrayList != null ){
             UserPost mUser =  mUserPostsArrayList.get(p);
-            String userData[] = {
+            String[] userData = {
                     mUser.getUName(),
                     mUser.getUserContact(),
                     mUser.getUserProfilePic(),

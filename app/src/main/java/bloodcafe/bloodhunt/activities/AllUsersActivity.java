@@ -37,7 +37,7 @@ public class AllUsersActivity extends AppCompatActivity implements ListAllUsersR
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_users);
         rvAllUsers = findViewById(R.id.rvAllUsers);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar2);
+        Toolbar toolbar = findViewById(R.id.toolbar2);
         setSupportActionBar(toolbar);
         mSessionManager = new SessionManager(this);
         LinearLayoutManager mLinearLayoutManger = new LinearLayoutManager(this);

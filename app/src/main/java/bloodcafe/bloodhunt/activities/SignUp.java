@@ -46,6 +46,7 @@ public class SignUp extends AppCompatActivity {
     private String monthName;
     int age;
     private DatePickerDialog.OnDateSetListener dPickerDialog;
+    //private DatePickerDialog.OnDateSetListener dPickerDialog;
     Button signUpBtn;
     ArrayAdapter<CharSequence> adapter;
     private ConnectivityManager connectivityManager;

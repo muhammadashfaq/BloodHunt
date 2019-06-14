@@ -261,11 +261,7 @@ public class BloodRequestActivity extends AppCompatActivity implements GoogleApi
         } catch (Exception ex) {
         }
 
-        if (!gps_enabled && !network_enabled) {
-            return false;
-        } else {
-            return true;
-        }
+        return gps_enabled || network_enabled;
     }
 
     public static boolean isLocationEnabled(Context context) {
@@ -630,10 +626,8 @@ public class BloodRequestActivity extends AppCompatActivity implements GoogleApi
            // Toast.makeText(this, currentLatitude+"\n"+currentLongitude, Toast.LENGTH_SHORT).show();
 
 
-            mCurrentLocation = String.valueOf(
-                    LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient).getLatitude())
-                    + "," + String.valueOf(
-                    LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient).getLongitude());
+            mCurrentLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient).getLatitude()
+                    + "," + LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient).getLongitude();
         } else {
             LocationServices.FusedLocationApi.requestLocationUpdates(
                     mGoogleApiClient,
@@ -665,8 +659,8 @@ public class BloodRequestActivity extends AppCompatActivity implements GoogleApi
 
     @Override
     public void onLocationChanged(Location location) {
-        mCurrentLocation = String.valueOf(location.getLatitude()) + "," +
-                String.valueOf(location.getLongitude());
+        mCurrentLocation = location.getLatitude() + "," +
+                location.getLongitude();
         currentLatitude= String.valueOf(location.getLatitude());
         currentLongitude= String.valueOf(location.getLongitude());
        // Toast.makeText(this, currentLatitude+"\n"+currentLongitude, Toast.LENGTH_SHORT).show();
@@ -744,5 +738,10 @@ public class BloodRequestActivity extends AppCompatActivity implements GoogleApi
                         }).show();
             }
         }
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this,HomePage.class));
     }
 }

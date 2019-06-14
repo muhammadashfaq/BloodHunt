@@ -37,7 +37,7 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerViewHo
     }
 
     public void setItemClickCallback(final HomeItemClickCallback itemClickCallback) {
-        this.itemClickCallback = itemClickCallback;
+        HomeRecyclerAdapter.itemClickCallback = itemClickCallback;
     }
 
 

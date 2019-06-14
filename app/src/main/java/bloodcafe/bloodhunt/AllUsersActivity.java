@@ -2,6 +2,7 @@ package bloodcafe.bloodhunt;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -42,7 +43,7 @@ public class AllUsersActivity extends AppCompatActivity implements ListAllUsersR
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_users);
         rvAllUsers = findViewById(R.id.rvAllUsers);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar2);
+        Toolbar toolbar = findViewById(R.id.toolbar2);
         setSupportActionBar(toolbar);
         swipeLayout = findViewById(R.id.swipe_container);
         swipeLayout.setOnRefreshListener(this);
@@ -137,5 +138,11 @@ public class AllUsersActivity extends AppCompatActivity implements ListAllUsersR
     public void onRefresh() {
         getAllUserListData();
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this,HomePage.class));
     }
 }

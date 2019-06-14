@@ -66,7 +66,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar3);
+        Toolbar toolbar = findViewById(R.id.toolbar3);
         setSupportActionBar(toolbar);
         img_vu_userProfile = findViewById(R.id.img_vu_userProfile);
         img_vu_uploadNewProfilePic = findViewById(R.id.img_vu_uploadNewProfilePic);

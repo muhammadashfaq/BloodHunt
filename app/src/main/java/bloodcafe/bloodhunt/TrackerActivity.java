@@ -57,7 +57,7 @@ public class TrackerActivity extends AppCompatActivity implements OnMapReadyCall
     private int SMS_PERMISSION = 100;
     private int CALL_PERMISSION = 200;
     Spinner spinner;
-    String userData[];
+    String[] userData;
     ProgressDialog mProgressDialogue;
     DatabaseReference dbRef;
 
@@ -177,6 +177,8 @@ public class TrackerActivity extends AppCompatActivity implements OnMapReadyCall
         }
 
     }
+
+
 
 
     private void takeCallPermission() {
@@ -375,5 +377,11 @@ public class TrackerActivity extends AppCompatActivity implements OnMapReadyCall
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this,HomePage.class));
     }
 }

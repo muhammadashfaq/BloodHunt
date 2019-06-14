@@ -33,7 +33,7 @@ public class ListAllUsersRecyclerAdapter extends RecyclerView.Adapter<ListAllUse
     }
 
     public void setItemClickCallback(final HomeItemClickCallback itemClickCallback) {
-        this.itemClickCallback = itemClickCallback;
+        ListAllUsersRecyclerAdapter.itemClickCallback = itemClickCallback;
     }
 
 
